@@ -658,9 +658,14 @@ function initSlider(slidesId, dotsId) {
   let startX = 0;
   let startY = 0; // To detect vertical vs horizontal drag
   const sliderEl = slides.parentElement;
-  sliderEl.style.touchAction = 'pan-y'; // Allow vertical scrolling, prevent horizontal browser scroll
+
+  // No desktop permitimos pan-y, no mobile as CSS handlers resolvem a inatividade de swipe
+  sliderEl.style.touchAction = 'pan-y';
 
   sliderEl.addEventListener('pointerdown', e => {
+    // DESATIVAR drag/swipe no mobile (<= 768px) para não conflitar com a rolagem vertical
+    if (window.innerWidth <= 768) return;
+
     // Ignore if clicking on interactive elements within the slider
     if (e.target.closest('button, a, input, textarea, [data-interactive]')) return;
     isDown = true;
@@ -672,6 +677,8 @@ function initSlider(slidesId, dotsId) {
 
   sliderEl.addEventListener('pointermove', e => {
     if (!isDown) return;
+    if (window.innerWidth <= 768) return; // Segurança extra no mobile
+
     e.preventDefault(); // Prevent text selection and default horizontal scroll
     const diffX = startX - e.clientX;
     const diffY = startY - e.clientY;
@@ -686,6 +693,8 @@ function initSlider(slidesId, dotsId) {
 
   sliderEl.addEventListener('pointerup', e => {
     if (!isDown) return;
+    if (window.innerWidth <= 768) return; // Segurança extra no mobile
+
     isDown = false;
     const diff = startX - e.clientX;
     if (Math.abs(diff) > 50) { // Threshold for a swipe

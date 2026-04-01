@@ -1323,14 +1323,13 @@ section {
 
 .carousel-showcase {
   position: relative;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
   display: flex;
-  /* Mudando de grid para flex para habilitar scroll horizontal nos cards de instagram */
+  justify-content: center;
   gap: 28px;
   align-items: start;
-  padding: 0 40px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -1349,12 +1348,10 @@ section {
   overflow: hidden;
   transition: var(--t);
   flex: 0 0 380px;
-  /* Adicionado flex-basis fixo para forçar a rolagem em flex container */
   max-width: 380px;
   margin: 0 auto;
   width: 100%;
   touch-action: pan-y;
-  /* Impede que o swipe horizontal arraste a página */
 }
 
 .ig-post-wrapper:hover {
@@ -3503,5 +3500,22 @@ footer p {
 
   .section-header p {
     font-size: 1rem;
+  }
+
+  /* Ajustes do Carrossel Mobile */
+  #carrosseis {
+    padding: 50px 20px;
+  }
+
+  .carousel-showcase {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .ig-post-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
   }
 }
