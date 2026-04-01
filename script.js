@@ -654,62 +654,63 @@ function initSlider(slidesId, dotsId) {
   }
 
   // Swipe inteligente v2.0 com Pointer Events
-  let isDown = false;
-  let startX = 0;
-  let startY = 0; // To detect vertical vs horizontal drag
   const sliderEl = slides.parentElement;
 
-  // No desktop permitimos pan-y, no mobile as CSS handlers resolvem a inatividade de swipe
-  sliderEl.style.touchAction = 'pan-y';
+  if (window.innerWidth > 768) {
+    let isDown = false;
+    let startX = 0;
+    let startY = 0; // To detect vertical vs horizontal drag
 
-  sliderEl.addEventListener('pointerdown', e => {
-    // DESATIVAR drag/swipe no mobile (<= 768px) para não conflitar com a rolagem vertical
-    if (window.innerWidth <= 768) return;
+    // No desktop permitimos pan-y, mantendo o drag interativo horizontalmente
+    sliderEl.style.touchAction = 'pan-y';
 
-    // Ignore if clicking on interactive elements within the slider
-    if (e.target.closest('button, a, input, textarea, [data-interactive]')) return;
-    isDown = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    sliderEl.setPointerCapture(e.pointerId);
-    sliderEl.style.cursor = 'grabbing';
-  });
+    sliderEl.addEventListener('pointerdown', e => {
+      // Ignore if clicking on interactive elements within the slider
+      if (e.target.closest('button, a, input, textarea, [data-interactive]')) return;
+      isDown = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      sliderEl.setPointerCapture(e.pointerId);
+      sliderEl.style.cursor = 'grabbing';
+    });
 
-  sliderEl.addEventListener('pointermove', e => {
-    if (!isDown) return;
-    if (window.innerWidth <= 768) return; // Segurança extra no mobile
+    sliderEl.addEventListener('pointermove', e => {
+      if (!isDown) return;
+      e.preventDefault(); // Prevent text selection and default horizontal scroll
+      const diffX = startX - e.clientX;
+      const diffY = startY - e.clientY;
 
-    e.preventDefault(); // Prevent text selection and default horizontal scroll
-    const diffX = startX - e.clientX;
-    const diffY = startY - e.clientY;
+      // If movement is predominantly horizontal, prevent vertical scroll
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) { // Add a small threshold
+        sliderEl.style.touchAction = 'none'; // Temporarily disable all touch actions
+      } else {
+        sliderEl.style.touchAction = 'pan-y'; // Re-enable vertical pan if not horizontal drag
+      }
+    });
 
-    // If movement is predominantly horizontal, prevent vertical scroll
-    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) { // Add a small threshold
-      sliderEl.style.touchAction = 'none'; // Temporarily disable all touch actions
-    } else {
-      sliderEl.style.touchAction = 'pan-y'; // Re-enable vertical pan if not horizontal drag
-    }
-  });
+    sliderEl.addEventListener('pointerup', e => {
+      if (!isDown) return;
+      isDown = false;
+      const diff = startX - e.clientX;
+      if (Math.abs(diff) > 50) { // Threshold for a swipe
+        slideIg(slidesId, dotsId, diff > 0 ? 1 : -1);
+      }
+      sliderEl.releasePointerCapture(e.pointerId);
+      sliderEl.style.cursor = 'grab';
+      sliderEl.style.touchAction = 'pan-y'; // Reset touch-action
+    });
 
-  sliderEl.addEventListener('pointerup', e => {
-    if (!isDown) return;
-    if (window.innerWidth <= 768) return; // Segurança extra no mobile
-
-    isDown = false;
-    const diff = startX - e.clientX;
-    if (Math.abs(diff) > 50) { // Threshold for a swipe
-      slideIg(slidesId, dotsId, diff > 0 ? 1 : -1);
-    }
-    sliderEl.releasePointerCapture(e.pointerId);
-    sliderEl.style.cursor = 'grab';
-    sliderEl.style.touchAction = 'pan-y'; // Reset touch-action
-  });
-
-  sliderEl.addEventListener('pointercancel', () => {
-    isDown = false;
-    sliderEl.style.cursor = 'grab';
-    sliderEl.style.touchAction = 'pan-y'; // Reset touch-action
-  });
+    sliderEl.addEventListener('pointercancel', () => {
+      isDown = false;
+      sliderEl.style.cursor = 'grab';
+      sliderEl.style.touchAction = 'pan-y'; // Reset touch-action
+    });
+  } else {
+    // === MOBILE ===
+    // No mobile a área dos slides é completamente desativada para Drag horizontal no Javascript.
+    // Assim, nenhum scroll em andamento será "roubado".
+    // Isso cumpre 100% o briefing de comportamento natural.
+  }
 }
 
 function goToSlide(slidesId, dotsId, index) {

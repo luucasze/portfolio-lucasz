@@ -3505,17 +3505,31 @@ footer p {
   /* Ajustes do Carrossel Mobile */
   #carrosseis {
     padding: 50px 20px;
+    overflow-x: hidden;
+    /* Cortando qualquer scroll vazado */
   }
 
   .carousel-showcase {
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    overflow-x: hidden !important;
+    touch-action: pan-y !important;
+    /* Exclusividade vertical no container */
   }
 
   .ig-post-wrapper {
     flex: 0 0 auto;
     width: 100%;
     max-width: 100%;
+    touch-action: pan-y !important;
+  }
+
+  .ig-slider {
+    touch-action: pan-y !important;
+    /* Cancela gestos complexos ou laterais na imagem principal */
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
   }
 }
