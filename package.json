@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-lucas",
+  "version": "1.0.0",
+  "description": "Portfolio do Lucas",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
