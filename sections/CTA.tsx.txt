@@ -1,0 +1,50 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import Button from "@/components/Button";
+import { cta } from "@/content/cta";
+import { LINKS } from "@/config/links";
+
+export default function CTA() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+        <div className="flex flex-col items-start gap-6 max-w-2xl">
+
+          {/* Título */}
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+            {cta.title}
+          </h2>
+
+          {/* Descrição */}
+          <p className="text-gray-300 text-lg">
+            {cta.description}
+          </p>
+
+          {/* Preço */}
+          <div className="flex flex-col gap-1">
+            <span className="text-4xl font-bold text-yellow-400">
+              {cta.price}
+            </span>
+            <span className="text-sm text-gray-400">
+              {cta.condition}
+            </span>
+          </div>
+
+          {/* Botão */}
+          <a href={LINKS.checkout}>
+            <Button className="text-lg px-8 py-4">
+              {cta.button}
+            </Button>
+          </a>
+
+          {/* Garantia */}
+          <div className="flex flex-col gap-1 text-sm text-gray-500">
+            <span>{cta.guarantee}</span>
+            <span>{cta.risk}</span>
+          </div>
+
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+}

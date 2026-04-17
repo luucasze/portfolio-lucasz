@@ -1,0 +1,11 @@
+export const PRODUCT = {
+  name: "Kit Defesa",
+  price: "R$ 9,90",
+  oldPrice: "R$ 49,90",
+
+  description:
+    "Sistema completo para freelancers se posicionarem, cobrarem melhor e evitarem prejuízo com clientes",
+
+  ctaPrimary: "Quero me posicionar de verdade",
+  ctaSecondary: "Começar agora",
+};

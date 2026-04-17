@@ -1,0 +1,27 @@
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.04);
+}
+
+/* glow laranja */
+.glow {
+  box-shadow: 0 0 20px rgba(252, 79, 0, 0.35);
+}

@@ -1,0 +1,23 @@
+import Link from "next/link";
+
+export default function NotFound() {
+  return (
+    <div className="w-full h-screen flex flex-col items-center justify-center bg-black text-white gap-4">
+
+      <h1 className="text-3xl font-bold">
+        Página não encontrada
+      </h1>
+
+      <p className="text-gray-400">
+        Talvez você tenha clicado em um link errado.
+      </p>
+
+      <Link href="/">
+        <span className="text-yellow-400 underline cursor-pointer">
+          Voltar para o início
+        </span>
+      </Link>
+
+    </div>
+  );
+}

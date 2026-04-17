@@ -1,0 +1,27 @@
+import Hero from "@/sections/Hero";
+import Problemas from "@/sections/Problemas";
+import Quebra from "@/sections/Quebra";
+import Consciencia from "@/sections/Consciencia";
+import Produto from "@/sections/Produto";
+import Pilares from "@/sections/Pilares";
+import Inclusos from "@/sections/Inclusos";
+import Realidade from "@/sections/Realidade";
+import Decisao from "@/sections/Decisao";
+import CTA from "@/sections/CTA";
+
+export default function Home() {
+  return (
+    <main className="bg-black text-white">
+      <Hero />
+      <Problemas />
+      <Quebra />
+      <Consciencia />
+      <Produto />
+      <Pilares />
+      <Inclusos />
+      <Realidade />
+      <Decisao />
+      <CTA />
+    </main>
+  );
+}

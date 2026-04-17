@@ -1,0 +1,19 @@
+export const pilares = {
+  title: "O que muda pra você",
+  subtitle: "Três pilares. Uma virada.",
+
+  items: [
+    {
+      title: "Proteção",
+      text: "Pare de trabalhar no fio da navalha. Com contrato e recibo, você tem respaldo legal e o cliente sabe que está tratando com alguém sério.",
+    },
+    {
+      title: "Precificação",
+      text: "Chega de chutar valor. A calculadora mostra o que você precisa cobrar para cobrir custos, ter margem e crescer — sem culpa.",
+    },
+    {
+      title: "Autoridade",
+      text: "Apresentação comercial e briefing profissional. Você chega numa reunião e transmite confiança antes de mostrar qualquer portfólio.",
+    },
+  ],
+};

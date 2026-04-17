@@ -1,0 +1,27 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import { identificacao } from "@/content/identificacao";
+
+export default function Problemas() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+        <div className="flex flex-col gap-8">
+
+          <h2 className="text-3xl md:text-5xl font-bold">
+            {identificacao.title}
+          </h2>
+
+          <div className="flex flex-col gap-4">
+            {identificacao.items.map((item, i) => (
+              <div key={i} className="border border-neutral-800 p-4 rounded-xl">
+                {item}
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+}

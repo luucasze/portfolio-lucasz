@@ -1,0 +1,23 @@
+const theme = {
+  colors: {
+    background: "#0B0B0B",
+    primary: "#FACC15", // amarelo destaque
+    secondary: "#22C55E", // verde tipo WhatsApp
+    text: "#FFFFFF",
+    textMuted: "#A1A1AA",
+    border: "#1F1F1F",
+  },
+
+  fonts: {
+    heading: "Inter, sans-serif",
+    body: "Inter, sans-serif",
+  },
+
+  radius: {
+    sm: "8px",
+    md: "12px",
+    lg: "16px",
+  },
+};
+
+export default theme;

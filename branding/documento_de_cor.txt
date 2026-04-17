@@ -1,0 +1,4 @@
+Paleta de cor:
+Cinza: #E6E6E6
+Branco: #FFFFFF
+Laranja: #FC4F00

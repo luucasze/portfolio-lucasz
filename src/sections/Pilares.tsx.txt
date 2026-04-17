@@ -1,0 +1,28 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import { pilares } from "@/content/pilares";
+
+export default function Pilares() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+        <div className="flex flex-col gap-10">
+
+          <h2 className="text-4xl font-bold">
+            {pilares.title}
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {pilares.items.map((p, i) => (
+              <div key={i} className="border p-6 rounded-xl">
+                <h3 className="font-bold">{p.title}</h3>
+                <p>{p.text}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+}

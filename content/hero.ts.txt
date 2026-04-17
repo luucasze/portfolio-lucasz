@@ -1,0 +1,15 @@
+export const hero = {
+  badge: "Para designers freelancers",
+
+  title: "Você não ganha mal.",
+  highlight: "Você trabalha sem estrutura.",
+
+  description: [
+    "Sem contrato. Sem precificação certa. Sem como se proteger.",
+    "É por isso que você trabalha muito e sente que nunca avança.",
+  ],
+
+  cta: "Quero me proteger agora →",
+
+  sub: "Acesso imediato · Sem assinatura",
+};

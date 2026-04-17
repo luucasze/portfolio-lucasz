@@ -1,0 +1,7 @@
+export default function HighlightText({ children }) {
+  return (
+    <span className="text-yellow-400 font-semibold">
+      {children}
+    </span>
+  );
+}

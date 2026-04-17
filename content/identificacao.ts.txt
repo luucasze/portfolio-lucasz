@@ -1,0 +1,12 @@
+export const identificacao = {
+  title: "Reconhece isso?",
+
+  items: [
+    "Mandou orçamento, o cliente sumiu",
+    "Entregou o trabalho, o pagamento não veio",
+    "Cobrou um valor e sentiu que foi barato demais",
+    "Fez revisão após revisão sem saber quando dizer não",
+    "Quis parecer profissional, mas não sabia como",
+    "Aceitou um projeto porque precisava — não porque queria",
+  ],
+};

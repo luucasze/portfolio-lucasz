@@ -1,0 +1,15 @@
+export default function ChatBubble({ message, from = "client" }) {
+  return (
+    <div className={`flex ${from === "client" ? "justify-start" : "justify-end"} mb-2`}>
+      <div
+        className={`px-4 py-2 rounded-xl max-w-xs text-sm ${
+          from === "client"
+            ? "bg-gray-800 text-white"
+            : "bg-green-500 text-black"
+        }`}
+      >
+        {message}
+      </div>
+    </div>
+  );
+}

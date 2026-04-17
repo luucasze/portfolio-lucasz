@@ -1,0 +1,31 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import { realidade } from "@/content/realidade";
+
+export default function Realidade() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+
+        <div className="max-w-3xl flex flex-col gap-4">
+
+          <h2 className="text-4xl font-bold">
+            {realidade.title}
+          </h2>
+
+          <p>{realidade.intro}</p>
+
+          {realidade.items.map((i, index) => (
+            <p key={index}>{i}</p>
+          ))}
+
+          <p className="font-semibold">
+            {realidade.conclusion}
+          </p>
+
+        </div>
+
+      </Container>
+    </SectionWrapper>
+  );
+}

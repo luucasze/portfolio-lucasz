@@ -1,0 +1,7 @@
+export const LINKS = {
+  checkout: "https://pay.kiwify.com.br/1M1z6Hn",
+
+  whatsapp: "https://wa.me/5563992770792",
+
+  instagram: "https://www.instagram.com/lucaszedesign/",
+};

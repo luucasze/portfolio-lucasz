@@ -1,0 +1,48 @@
+/* TEXTO */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.text-gray {
+  color: var(--color-gray);
+}
+
+/* CARD PADRÃO */
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* CARD DESTACADO */
+.card-highlight {
+  border: 1px solid var(--color-primary);
+  background: rgba(252, 79, 0, 0.05);
+}
+
+/* BOTÃO */
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* CONTAINER */
+.container-custom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

@@ -1,0 +1,27 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import { consciencia } from "@/content/consciencia";
+
+export default function Consciencia() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+        <div className="max-w-3xl flex flex-col gap-4">
+
+          <h2 className="text-4xl font-bold">
+            {consciencia.title}
+          </h2>
+
+          {consciencia.text.map((t, i) => (
+            <p key={i}>{t}</p>
+          ))}
+
+          <p className="font-semibold">
+            {consciencia.conclusion}
+          </p>
+
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+}

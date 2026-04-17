@@ -1,0 +1,12 @@
+export const quebra = {
+  title: "A verdade",
+
+  highlight: "Isso não é azar. É falta de estrutura.",
+
+  text: [
+    "O cliente não sumiu porque é mal-caráter. Ele sumiu porque não havia nada que o prendesse à responsabilidade.",
+    "Você não cobrou errado porque não sabe trabalhar. Cobrou errado porque nunca teve uma referência real de quanto seu tempo vale.",
+    "Nenhuma escola ensina isso. Nenhum curso de design fala sobre contrato, precificação ou fluxo de caixa.",
+    "Você foi jogado no mercado sem as ferramentas certas.",
+  ],
+};

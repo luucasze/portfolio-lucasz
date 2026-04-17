@@ -1,0 +1,14 @@
+const seo = {
+  title: "Kit Defesa | Pare de ser desvalorizado como freelancer",
+  description:
+    "Se você não sabe se defender, o cliente manda em você. Aprenda a cobrar certo, se posicionar e nunca mais ser passado pra trás.",
+  
+  openGraph: {
+    title: "Kit Defesa",
+    description:
+      "Você não ganha mal. Você só não sabe se defender.",
+    image: "/og-image.jpg",
+  },
+};
+
+export default seo;

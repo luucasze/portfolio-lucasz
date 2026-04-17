@@ -1,0 +1,45 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import Button from "@/components/Button";
+import HighlightText from "@/components/HighlightText";
+import { hero } from "@/content/hero";
+import { LINKS } from "@/config/links";
+
+export default function Hero() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+        <div className="flex flex-col gap-8">
+
+          <span className="text-sm text-yellow-400">
+            {hero.badge}
+          </span>
+
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            {hero.title} <br />
+            <HighlightText>{hero.highlight}</HighlightText>
+          </h1>
+
+          <div className="flex flex-col gap-2 text-gray-300 text-lg">
+            {hero.description.map((item, i) => (
+              <p key={i}>{item}</p>
+            ))}
+          </div>
+
+          <a href={LINKS.checkout}>
+            <Button>{hero.cta}</Button>
+          </a>
+
+          <span className="text-sm text-gray-500">
+            {hero.sub}
+          </span>
+
+          <img
+            src="/assets/images/hero/hero-frustracao-v1.png"
+            className="rounded-xl border border-neutral-800"
+          />
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+}

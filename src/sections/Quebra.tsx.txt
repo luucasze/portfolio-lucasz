@@ -1,0 +1,28 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import HighlightText from "@/components/HighlightText";
+import { quebra } from "@/content/quebra";
+
+export default function Quebra() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+        <div className="max-w-3xl flex flex-col gap-6">
+
+          <span className="text-yellow-400 text-sm">
+            {quebra.title}
+          </span>
+
+          <h2 className="text-4xl font-bold">
+            <HighlightText>{quebra.highlight}</HighlightText>
+          </h2>
+
+          {quebra.text.map((t, i) => (
+            <p key={i} className="text-gray-300">{t}</p>
+          ))}
+
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+}

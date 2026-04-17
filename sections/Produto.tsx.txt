@@ -1,0 +1,45 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import HighlightText from "@/components/HighlightText";
+import { produto } from "@/content/produto";
+
+export default function Produto() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+        <div className="flex flex-col gap-8 max-w-3xl">
+
+          {/* Label */}
+          <span className="text-sm text-yellow-400 font-medium">
+            {produto.label}
+          </span>
+
+          {/* Nome */}
+          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+            {produto.name}
+          </h2>
+
+          {/* Descrição */}
+          <div className="flex flex-col gap-4 text-lg text-gray-300">
+            {produto.description.map((item, index) => (
+              <p key={index}>{item}</p>
+            ))}
+          </div>
+
+          {/* Frases fortes */}
+          <div className="flex flex-col gap-2">
+            {produto.highlight.map((item, index) => (
+              <p
+                key={index}
+                className="text-xl font-semibold text-white"
+              >
+                {item}
+              </p>
+            ))}
+          </div>
+
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+}

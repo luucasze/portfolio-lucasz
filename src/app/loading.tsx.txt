@@ -1,0 +1,9 @@
+export default function Loading() {
+  return (
+    <div className="w-full h-screen flex items-center justify-center bg-black text-white">
+      <div className="animate-pulse text-yellow-400 text-lg">
+        Carregando...
+      </div>
+    </div>
+  );
+}

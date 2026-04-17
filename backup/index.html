@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n="meta-desc"
+    content="Lucaszé Design | Design estratégico com foco em percepção e resultado. Especialista em Branding, Social Media e Design de Conversão." />
+  <meta name="keywords"
+    content="design estratégico, branding, social media design, conversion-focused design, lucaszé, design que vende, digital products" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lucaszedesign.com.br/">
+  <meta property="og:title" content="Lucaszé — Design que Vende" data-i18n="meta-og-title">
+  <meta property="og:description"
+    content="Transformando marcas em negócios através de design estratégico e percepção de valor."
+    data-i18n="meta-og-desc">
+  <meta property="og:image" content="assets/branding/cabeca_3d_hero.webp">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Lucaszé — Design que Vende">
+  <meta property="twitter:description"
+    content="Transformando marcas em negócios através de design estratégico e percepção de valor.">
+  <meta property="twitter:image" content="assets/branding/cabeca_3d_hero.webp">
+
+  <title data-i18n="site-title">Lucaszé — Design que Vende | Design Estratégico & Branding</title>
+  <link rel="icon" href="favicon_round.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://lucaszedesign.com.br/" />
+
+  <!-- Preload Critical Hero Assets -->
+  <link rel="preload" as="image" href="assets/branding/cabeca_3d_olho_separado/cabeca_3d_sem_os_olhos.webp"
+    fetchpriority="high">
+  <link rel="preload" as="image" href="assets/branding/cabeca_3d_olho_separado/globo_ocular_esquerdo.webp"
+    fetchpriority="high">
+  <link rel="preload" as="image" href="assets/branding/cabeca_3d_olho_separado/globo_ocular_direito.webp"
+    fetchpriority="high">
+</head>
+
+<body>
+
+  <!-- ==================== HEADER & NAV ==================== -->
+  <header id="mainHeader">
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo js-smooth" aria-label="Ir para o topo - Lucaszé Design"
+          data-i18n="nav-logo-aria">
+          <img src="assets/branding/logo_lucasze_com_ze_laranja.webp"
+            alt="Logotipo Lucaszé Design - Especialista em Design Estratégico" data-i18n="nav-logo-alt" />
+        </a>
+        <ul class="nav-links">
+          <!-- Desktop Lang Switcher (ao lado de Projetos - Lado Esquerdo) -->
+          <li class="nav-lang-item desktop-only">
+            <div class="nav-lang-switcher">
+              <button onclick="changeLanguage('pt')" class="lang-btn active" id="btn-pt-desktop"
+                title="Português">PT</button>
+              <button onclick="changeLanguage('en')" class="lang-btn" id="btn-en-desktop" title="English">EN</button>
+            </div>
+          </li>
+          <li><a href="#projetos" class="js-smooth" data-i18n="nav-projects">Projetos</a></li>
+          <li><a href="#carrosseis" class="js-smooth" data-i18n="nav-carousels">Carrosséis</a></li>
+          <li><a href="#videos" class="js-smooth" data-i18n="nav-videos">Vídeos</a></li>
+          <li><a href="#sobre" class="js-smooth" data-i18n="nav-about">Sobre</a></li>
+          <li><a href="https://wa.me/5563992770792" target="_blank" class="nav-cta" data-i18n="nav-cta"
+              data-magnetic>Fale Comigo</a></li>
+        </ul>
+
+        <!-- Mobile Lang Switcher (fora do hambúrguer) -->
+        <div class="nav-lang-switcher header-lang mobile-only">
+          <button onclick="changeLanguage('pt')" class="lang-btn active" id="btn-pt-mobile"
+            title="Português">PT</button>
+          <button onclick="changeLanguage('en')" class="lang-btn" id="btn-en-mobile" title="English">EN</button>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu de navegação" data-i18n="nav-hamburger-aria">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Particle canvas Global moved to main or body -->
+    <canvas id="bgParticles"></canvas>
+    <div id="universe-atmosphere"></div>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero">
+      <!-- Ambient orbs -->
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+
+
+
+      <!-- ── TEXTO GIGANTE (Topo) ── -->
+      <div class="hero-top-text" data-reveal>
+        <h1 class="hero-top-title" data-i18n="hero-title">OI, SOU <span class="neon-name">LUCASZÉ</span></h1>
+      </div>
+
+      <!-- ── MASCOTE 3D (Com Margem Negativa cobrindo o texto) ── -->
+      <div class="hero-mascot" id="heroMascot" data-reveal>
+
+        <!-- Fallback Mobile (Head fundida) -->
+        <img src="assets/branding/cabeca_3d_hero.webp"
+          alt="Mascote 3D Lucaszé - Avatar interativo representando inovação e estratégia"
+          class="mascot-png mascot-mobile" loading="eager" fetchpriority="high" />
+
+        <!-- Interativo Desktop (Head vazada e olhos separados) -->
+        <div class="mascot-desktop">
+
+          <!-- Ícones Vectorianos Orbitais (Parallax Layer z:5) -->
+          <svg class="float-icon pen" data-rot="-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="var(--white)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+            <path d="M2 2l7.586 7.586" />
+            <circle cx="11" cy="11" r="2" fill="var(--primary-orange)" stroke="none" />
+          </svg>
+          <svg class="float-icon rocket" data-rot="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="var(--primary-orange)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+            <path
+              d="M12 15l-3-3a22 22 0 0 1-.5-8.5c4-1 7.5-.5 8.5-.5a22 22 0 0 1 8.5.5c0 1-.5 4.5-.5 8.5a22 22 0 0 1-8.5.5c-1 0-2-.17-3-.5z" />
+            <path d="M9 12l-6 6" />
+            <path d="M12 9l6-6" />
+            <circle cx="15.5" cy="8.5" r="1.5" fill="var(--white)" />
+          </svg>
+          <svg class="float-icon target" data-rot="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="var(--white)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="2" fill="var(--primary-orange)" stroke="none" />
+          </svg>
+          <svg class="float-icon sparkle" data-rot="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="var(--primary-orange)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M12 2l2.4 7.6H22l-6.1 4.5 2.3 7.4-6.2-4.6-6.2 4.6 2.3-7.4-6.1-4.5h7.6z"
+              fill="rgba(255,107,0,0.2)" />
+          </svg>
+          <svg class="float-icon diamond" data-rot="-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="var(--white)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M6 3h12l4 6-10 12L2 9l4-6z" />
+            <path d="M2 9h20M12 21V9M6 3l6 6M18 3l-6 6" />
+          </svg>
+          <svg class="float-icon lightning" data-rot="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="var(--primary-orange)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          </svg>
+
+          <!-- Globos Oculares (fundo branco do olho) -->
+          <img src="assets/branding/cabeca_3d_olho_separado/globo_ocular_esquerdo.webp" alt=""
+            class="eye-layer eye-globe-l" loading="eager" fetchpriority="high">
+          <img src="assets/branding/cabeca_3d_olho_separado/globo_ocular_direito.webp" alt=""
+            class="eye-layer eye-globe-r" loading="eager" fetchpriority="high">
+
+          <!-- Pupilas (se movem com o JS) -->
+          <img src="assets/branding/cabeca_3d_olho_separado/pupila_esquerda.webp" alt="" class="eye-layer pupil pupil-l"
+            loading="eager" fetchpriority="high">
+          <img src="assets/branding/cabeca_3d_olho_separado/pupila_direita.webp" alt="" class="eye-layer pupil pupil-r"
+            loading="eager" fetchpriority="high">
+
+          <!-- Cabeça Principal (por cima de tudo para dar a geometria e contornar a borda do olho) -->
+          <img src="assets/branding/cabeca_3d_olho_separado/cabeca_3d_sem_os_olhos.webp"
+            alt="Render 3D da cabeça do mascote sem olhos para efeito de parallax" class="mascot-png mascot-head"
+            loading="eager" fetchpriority="high">
+        </div>
+      </div>
+
+      <div class="mascot-glow"></div>
+      </div>
+
+      <!-- ── COPY E BOTÕES (Baixo) ── -->
+      <div class="hero-content">
+        <p class="hero-eyebrow" data-i18n="hero-eyebrow">Designer Estratégico</p>
+        <h1 class="hero-title-hidden" style="display:none;" data-i18n="hero-title">OI, SOU LUCASZÉ</h1>
+        <p class="hero-sub" data-i18n="hero-sub">Designer estratégico focado em transformar percepção em valor.</p>
+        <p class="hero-sub-support" data-i18n="hero-sub-support">Se sua marca parece amadora, você está perdendo vendas
+          todos os dias.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5563992770792" target="_blank" class="btn-cta-glass" id="btn-hero-cta" data-magnetic>
+            <span class="btn-cta-inner">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.104 1.524 5.826L0 24l6.337-1.508A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.001-1.368l-.361-.214-3.741.981.998-3.648-.235-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
+              </svg>
+              <span data-i18n="hero-cta">Fale comigo</span>
+            </span>
+          </a>
+          <a href="#projetos" class="btn-ghost js-smooth" data-i18n="hero-projects" data-magnetic>Ver Projetos</a>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- ==================== PROCESS (SECTION 2) ==================== -->
+    <section id="processo">
+      <div class="process-header" data-reveal>
+        <span class="section-tag" data-i18n="p-tag-1">01 . Método</span>
+        <h2 data-i18n="p-title-1">Não é execução.<br><span class="highlight">É estratégia.</span></h2>
+        <p data-i18n="p-sub-1">Cada projeto passa por um processo pensado para transformar percepção em resultado real.
+        </p>
+
+      </div>
+
+      <!-- Node system -->
+      <div class="process-nodes" id="processNodes">
+        <!-- Node 1 -->
+        <div class="node-card active" id="node-1" data-step="1">
+          <div class="node-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" />
+              <path d="M13 20a7 7 0 1 0 14 0 7 7 0 0 0-14 0z" stroke="currentColor" stroke-width="1.5" />
+              <circle cx="20" cy="20" r="2.5" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="node-number">01</div>
+          <h3 data-i18n="n-title-1">Entender</h3>
+          <p data-i18n="n-desc-1">Antes de criar qualquer coisa, mergulho no seu negócio. Quem você atende, o que você
+            vende, como o mercado te enxerga hoje, e onde está o gap entre a sua entrega e como ela é percebida.</p>
+          <div class="node-unlock-hint">
+            <span class="desktop-hint" data-i18n="n-hint-desktop">Passe o mouse para continuar →</span>
+            <span class="mobile-hint" data-i18n="n-hint-mobile">Toque no card para continuar →</span>
+          </div>
+        </div>
+
+        <!-- SVG connector 1→2 -->
+        <div class="node-connector" id="conn-1-2">
+          <svg viewBox="0 0 100 60" preserveAspectRatio="none">
+            <path d="M 0 30 Q 50 5 100 30" stroke="url(#flowGrad1)" stroke-width="1.5" fill="none"
+              stroke-dasharray="200" stroke-dashoffset="200" class="flow-path" id="path-1-2" />
+            <defs>
+              <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FC4F00" stop-opacity="0" />
+                <stop offset="50%" stop-color="#FC4F00" stop-opacity="1" />
+                <stop offset="100%" stop-color="#FC4F00" stop-opacity="0.3" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="energy-dot" id="energy-1-2"></div>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="node-card locked" id="node-2" data-step="2">
+          <div class="node-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M8 32V22M16 32V16M24 32V20M32 32V12" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" />
+              <path d="M6 14l6-4 8 5 8-7 6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="node-number">02</div>
+          <h3 data-i18n="n-title-2">Analisar</h3>
+          <p data-i18n="n-desc-2">Com dados em mãos, identifico o que está travando a percepção de valor. Analiso seu
+            conteúdo atual, a comunicação visual, o posicionamento e os concorrentes, para encontrar exatamente onde
+            melhorar.</p>
+          <div class="node-lock-overlay"></div>
+        </div>
+
+        <!-- SVG connector 2→3 -->
+        <div class="node-connector" id="conn-2-3">
+          <svg viewBox="0 0 100 60" preserveAspectRatio="none">
+            <path d="M 0 30 Q 50 55 100 30" stroke="url(#flowGrad2)" stroke-width="1.5" fill="none"
+              stroke-dasharray="200" stroke-dashoffset="200" class="flow-path" id="path-2-3" />
+            <defs>
+              <linearGradient id="flowGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FC4F00" stop-opacity="0" />
+                <stop offset="50%" stop-color="#FC4F00" stop-opacity="1" />
+                <stop offset="100%" stop-color="#FC4F00" stop-opacity="0.3" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="energy-dot" id="energy-2-3"></div>
+        </div>
+
+        <!-- Node 3 -->
+        <div class="node-card locked" id="node-3" data-step="3">
+          <div class="node-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M10 30 L18 22 L24 27 L34 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <rect x="6" y="6" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.5" />
+              <rect x="22" y="22" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="node-number">03</div>
+          <h3 data-i18n="n-title-3">Criar</h3>
+          <p data-i18n="n-desc-3">Aqui começa a transformação. Desenvolvo materiais visuais focados em percepção,
+            autoridade e conversão, que não são apenas bonitos, mas que fazem o cliente confiar antes mesmo de falar com
+            você.</p>
+          <div class="node-lock-overlay"></div>
+        </div>
+
+        <!-- SVG connector 3→4 -->
+        <div class="node-connector" id="conn-3-4">
+          <svg viewBox="0 0 100 60" preserveAspectRatio="none">
+            <path d="M 0 30 Q 50 5 100 30" stroke="url(#flowGrad3)" stroke-width="1.5" fill="none"
+              stroke-dasharray="200" stroke-dashoffset="200" class="flow-path" id="path-3-4" />
+            <defs>
+              <linearGradient id="flowGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FC4F00" stop-opacity="0" />
+                <stop offset="50%" stop-color="#FC4F00" stop-opacity="1" />
+                <stop offset="100%" stop-color="#FC4F00" stop-opacity="0.3" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="energy-dot" id="energy-3-4"></div>
+        </div>
+
+        <!-- Node 4 -->
+        <div class="node-card locked" id="node-4" data-step="4">
+          <div class="node-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M8 28h24M8 20h16M8 12h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              <path d="M28 24l6 4-6 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="node-number">04</div>
+          <h3 data-i18n="n-title-4">Entregar</h3>
+          <p data-i18n="n-desc-4">Material finalizado, pronto para publicar e converter. Você recebe arquivos
+            otimizados, orientação de uso e, quando necessário, suporte para aplicação, garantindo que o resultado
+            apareça de verdade.</p>
+          <div class="node-lock-overlay"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== O QUE EU FAÇO (SECTION 2) ==================== -->
+    <section id="servicos">
+      <div class="section-header" data-reveal>
+        <span class="section-tag" data-i18n="s-tag">02 . O que eu faço</span>
+        <h2 data-i18n="s-title">O QUE EU CONSTRUO PARA SUA <span class="highlight">MARCA</span></h2>
+        <p data-i18n="s-sub">Não entrego apenas design. Eu desenvolvo estruturas visuais pensadas para aumentar seu
+          valor percebido e facilitar a venda.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" data-reveal="scale">
+          <div class="service-icon-box">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3 data-i18n="s-item-1-t">Identidade visual estratégica</h3>
+            <p data-i18n="s-item-1-d">Sua marca deixa de parecer comum e passa a transmitir autoridade.</p>
+          </div>
+        </div>
+        <div class="service-card" data-reveal="scale">
+          <div class="service-icon-box">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3 data-i18n="s-item-2-t">Criativos para tráfego pago</h3>
+            <p data-i18n="s-item-2-d">Peças pensadas para parar o scroll e gerar clique.</p>
+          </div>
+        </div>
+        <div class="service-card" data-reveal="scale">
+          <div class="service-icon-box">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3 data-i18n="s-item-3-t">Landing pages e páginas de venda</h3>
+            <p data-i18n="s-item-3-d">Estrutura visual focada em conversão, não só estética.</p>
+          </div>
+        </div>
+        <!-- Ultima fileira centralizada -->
+        <div class="service-card service-card-center" data-reveal="scale">
+          <div class="service-icon-box">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3 data-i18n="s-item-4-t">Conteúdo para redes sociais</h3>
+            <p data-i18n="s-item-4-d">Postagens que constroem presença e despertam interesse.</p>
+          </div>
+        </div>
+        <div class="service-card service-card-center" data-reveal="scale">
+          <div class="service-icon-box">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+              <line x1="12" y1="22" x2="12" y2="15.5" />
+              <polyline points="22 8.5 12 15.5 2 8.5" />
+              <polyline points="2 15.5 12 8.5 22 15.5" />
+              <line x1="12" y1="2" x2="12" y2="8.5" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3 data-i18n="s-item-5-t">Estrutura visual de infoprodutos</h3>
+            <p data-i18n="s-item-5-d">Do eBook à apresentação, tudo com aparência profissional e vendável.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJETOS ==================== -->
+    <section id="projetos">
+      <div class="section-header" data-reveal>
+        <span class="section-tag" data-i18n="p-tag-2">03 . Projetos</span>
+        <h2 data-i18n="p-title-2">Trabalhos que <span class="highlight">Converteram</span></h2>
+        <p data-i18n="p-sub-2">Do briefing à entrega, cada projeto pensado com estratégia.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card" data-reveal="left" data-project="lavô">
+          <div class="project-media">
+            <img src="assets/projects/campanha_vem_pra_lavo/sujou_vem_pra_lavo_banner_feed.webp"
+              alt="Campanha Publicitária Vem Pra Lavô - Design de Social Media e Branding para Lavanderia"
+              class="project-img" loading="lazy" />
+            <div class="project-overlay">
+              <button class="btn-ghost-sm" onclick="openProjectModal('lavô')" data-i18n="p-btn-view-campaign">Ver
+                Campanha</button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 data-i18n="p-name-lavo">Campanha "Vem Pra Lavô"</h3>
+            <p data-i18n="p-desc-lavo">Identidade visual e estratégia para redes sociais. Um projeto focado em converter
+              seguidores em clientes através de design de impacto.</p>
+            <div class="project-tags">
+              <span data-i18n="p-tag-social">Social Media Design</span>
+              <span data-i18n="p-tag-branding">Branding Estratégico</span>
+              <span data-i18n="p-tag-conv">Conversão</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-reveal="right" data-project="coxinhas">
+          <div class="project-media">
+            <img src="assets/projects/mais_coxinhas/feed_02_03.webp"
+              alt="Mais Coxinhas - Fotografia de Produto e Design de Feed para Gastronomia" class="project-img"
+              loading="lazy" />
+            <div class="project-overlay">
+              <button class="btn-ghost-sm" onclick="openProjectModal('coxinhas')" data-i18n="p-btn-view">Ver
+                Projeto</button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 data-i18n="p-name-coxinhas">Mais Coxinhas</h3>
+            <p data-i18n="p-desc-coxinhas">Direção de arte e fotografia para food service. Autoridade visual que gera
+              desejo imediato de consumo.</p>
+            <div class="project-tags">
+              <span data-i18n="p-tag-photo">Fotografia</span>
+              <span data-i18n="p-tag-art">Direção de Arte</span>
+              <span data-i18n="p-tag-gastronomy">Design Gastronômico</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== CARROSSÉIS ==================== -->
+    <section id="carrosseis">
+      <div class="section-header" data-reveal>
+        <span class="section-tag" data-i18n="p-tag-3">03 . Carrosséis</span>
+        <h2 data-i18n="p-title-3">Conteúdo que <span class="highlight">Prende o Olhar</span></h2>
+        <p data-i18n="p-sub-3">Deslize para navegar como no Instagram.</p>
+      </div>
+
+      <div class="carousel-showcase">
+        <!-- CARROSSEL 1 -->
+        <article class="ig-post-wrapper" data-reveal>
+          <div class="ig-post-header">
+            <img src="assets/branding/perfil.webp" alt="Avatar Lucaszé Design" class="ig-avatar-img" />
+            <div class="ig-meta">
+              <strong>lucaszedesign</strong>
+              <small data-i18n="ig-meta-sub">Estratégia Visual</small>
+            </div>
+          </div>
+          <div class="ig-slider ig-portrait" id="slider-1">
+            <div class="ig-slides" id="slides-1">
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_1_capa.webp" alt="Slide 1"
+                loading="lazy" />
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_2.webp" alt="Slide 2" loading="lazy" />
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_3.webp" alt="Slide 3" loading="lazy" />
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_4.webp" alt="Slide 4" loading="lazy" />
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_5.webp" alt="Slide 5" loading="lazy" />
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_6.webp" alt="Slide 6" loading="lazy" />
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_7.webp" alt="Slide 7" loading="lazy" />
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_8.webp" alt="Slide 8" loading="lazy" />
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_9.webp" alt="Slide 9" loading="lazy" />
+              <img src="assets/carousels/carrossel_lucasze_vida_de_freela/pag_10.webp" alt="Slide 10" loading="lazy" />
+            </div>
+            <button class="ig-arrow ig-prev" onclick="slideIg('slides-1','dots-1',-1)">&#8249;</button>
+            <button class="ig-arrow ig-next" onclick="slideIg('slides-1','dots-1',1)">&#8250;</button>
+            <div class="ig-dots" id="dots-1"></div>
+          </div>
+          <div class="ig-post-footer">
+            <div class="ig-actions">
+              <button class="ig-like-btn" onclick="likePost(event)" aria-label="Curtir post">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </button>
+            </div>
+            <span class="ig-label" data-i18n="ig-cap-1">Vida de Freela . Lucaszé</span>
+          </div>
+        </article>
+
+        <!-- CARROSSEL 2 -->
+        <article class="ig-post-wrapper" data-reveal>
+          <div class="ig-post-header">
+            <img src="assets/branding/perfil.webp" alt="Avatar Lucaszé Design" class="ig-avatar-img" />
+            <div class="ig-meta">
+              <strong>lucaszedesign</strong>
+              <small data-i18n="ig-meta-sub">Estratégia Visual</small>
+            </div>
+          </div>
+          <div class="ig-slider ig-portrait" id="slider-2">
+            <div class="ig-slides" id="slides-2">
+              <img src="assets/carousels/carrossel_surya/pag_1.webp" alt="Slide 1" loading="lazy" />
+              <img src="assets/carousels/carrossel_surya/pag_2.webp" alt="Slide 2" loading="lazy" />
+              <img src="assets/carousels/carrossel_surya/pag_3.webp" alt="Slide 3" loading="lazy" />
+              <img src="assets/carousels/carrossel_surya/pag_4.webp" alt="Slide 4" loading="lazy" />
+              <img src="assets/carousels/carrossel_surya/pag_5.webp" alt="Slide 5" loading="lazy" />
+              <img src="assets/carousels/carrossel_surya/pag_6.webp" alt="Slide 6" loading="lazy" />
+            </div>
+            <button class="ig-arrow ig-prev" onclick="slideIg('slides-2','dots-2',-1)">&#8249;</button>
+            <button class="ig-arrow ig-next" onclick="slideIg('slides-2','dots-2',1)">&#8250;</button>
+            <div class="ig-dots" id="dots-2"></div>
+          </div>
+          <div class="ig-post-footer">
+            <div class="ig-actions">
+              <button class="ig-like-btn" onclick="likePost(event)" aria-label="Curtir post">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </button>
+            </div>
+            <span class="ig-label" data-i18n="ig-cap-2">Carrossel Surya</span>
+          </div>
+        </article>
+
+        <!-- CARROSSEL 3 -->
+        <article class="ig-post-wrapper" data-reveal>
+          <div class="ig-post-header">
+            <img src="assets/branding/perfil.webp" alt="Avatar Lucaszé Design" class="ig-avatar-img" />
+            <div class="ig-meta">
+              <strong>lucaszedesign</strong>
+              <small data-i18n="ig-meta-sub">Estratégia Visual</small>
+            </div>
+          </div>
+          <div class="ig-slider ig-portrait" id="slider-3">
+            <div class="ig-slides" id="slides-3">
+              <img src="assets/carousels/carrossel_iury/carrossel_deixou_lavou_buscou_01.webp" alt="Slide 1"
+                loading="lazy" />
+              <img src="assets/carousels/carrossel_iury/carrossel_deixou_lavou_buscou_02.webp" alt="Slide 2"
+                loading="lazy" />
+              <img src="assets/carousels/carrossel_iury/carrossel_deixou_lavou_buscou_03.webp" alt="Slide 3"
+                loading="lazy" />
+              <img src="assets/carousels/carrossel_iury/carrossel_deixou_lavou_buscou_04.webp" alt="Slide 4"
+                loading="lazy" />
+              <img src="assets/carousels/carrossel_iury/carrossel_deixou_lavou_buscou_05.webp" alt="Slide 5"
+                loading="lazy" />
+              <img src="assets/carousels/carrossel_iury/carrossel_deixou_lavou_buscou_06.webp" alt="Slide 6"
+                loading="lazy" />
+              <img src="assets/carousels/carrossel_iury/carrossel_deixou_lavou_buscou_07.webp" alt="Slide 7"
+                loading="lazy" />
+            </div>
+            <button class="ig-arrow ig-prev" onclick="slideIg('slides-3','dots-3',-1)">&#8249;</button>
+            <button class="ig-arrow ig-next" onclick="slideIg('slides-3','dots-3',1)">&#8250;</button>
+            <div class="ig-dots" id="dots-3"></div>
+          </div>
+          <div class="ig-post-footer">
+            <div class="ig-actions">
+              <button class="ig-like-btn" onclick="likePost(event)" aria-label="Curtir post">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </button>
+            </div>
+            <span class="ig-label" data-i18n="ig-cap-3">Iury . Vem Pra Lavô</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== VÍDEOS VERTICAIS ==================== -->
+    <section id="videos">
+      <div class="section-header" data-reveal>
+        <span class="section-tag" data-i18n="p-tag-4">04 . Vídeos</span>
+        <h2 data-i18n="p-title-4">Reels que <span class="highlight">Param o Scroll</span></h2>
+        <p data-i18n="p-sub-4">Conteúdo em movimento. Arraste para explorar,<br>hover para assistir.</p>
+      </div>
+
+      <div class="video-reel-wrapper" id="videoWrapper">
+        <div class="video-reel-track" id="videoTrack">
+
+          <article class="video-reel-card">
+            <video id="vid-1" src="assets/videos/reels_lucaszedesign/posicionamento_lucaszedesign.mp4"
+              preload="metadata" muted loop playsinline class="reel-video"></video>
+            <div class="reel-controls">
+              <div class="reel-audio-btn">
+                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+                <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="display:none">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                </svg>
+              </div>
+              <input type="range" class="reel-volume" min="0" max="1" step="0.05" value="0.5" />
+            </div>
+            <div class="reel-label"><span data-i18n="vid-label-1">Posicionamento</span><br><span>lucaszedesign</span>
+            </div>
+          </article>
+
+          <article class="video-reel-card">
+            <video id="vid-2" src="assets/videos/reels_lucaszedesign/reels_criatividade.mp4" preload="metadata" muted
+              loop playsinline class="reel-video"></video>
+            <div class="reel-controls">
+              <div class="reel-audio-btn">
+                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+                <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="display:none">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                </svg>
+              </div>
+              <input type="range" class="reel-volume" min="0" max="1" step="0.05" value="0.5" />
+            </div>
+            <div class="reel-label"><span data-i18n="vid-label-2">Criatividade</span><br><span>lucaszedesign</span>
+            </div>
+          </article>
+
+          <article class="video-reel-card">
+            <video id="vid-3" src="assets/videos/reels_mais_coxinhas/video_final_felipe_e_livia.mp4" preload="metadata"
+              muted loop playsinline class="reel-video"></video>
+            <div class="reel-controls">
+              <div class="reel-audio-btn">
+                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+                <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="display:none">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                </svg>
+              </div>
+              <input type="range" class="reel-volume" min="0" max="1" step="0.05" value="0.5" />
+            </div>
+            <div class="reel-label"><span data-i18n="vid-label-3">Festa</span><br><span>mais coxinhas</span></div>
+          </article>
+
+          <article class="video-reel-card">
+            <video id="vid-4" src="assets/videos/reels_mais_coxinhas/teste_mabili_3.mp4" preload="metadata" muted loop
+              playsinline class="reel-video"></video>
+            <div class="reel-controls">
+              <div class="reel-audio-btn">
+                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+                <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="display:none">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                </svg>
+              </div>
+              <input type="range" class="reel-volume" min="0" max="1" step="0.05" value="0.5" />
+            </div>
+            <div class="reel-label"><span data-i18n="vid-label-4">Produto</span><br><span>mais coxinhas</span></div>
+          </article>
+
+          <article class="video-reel-card">
+            <video id="vid-5" src="assets/videos/reels_mais_coxinhas/teste_turma_1.mp4" preload="metadata" muted loop
+              playsinline class="reel-video"></video>
+            <div class="reel-controls">
+              <div class="reel-audio-btn">
+                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+                <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="display:none">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                </svg>
+              </div>
+              <input type="range" class="reel-volume" min="0" max="1" step="0.05" value="0.5" />
+            </div>
+            <div class="reel-label"><span data-i18n="vid-label-5">Equipe</span><br><span>mais coxinhas</span></div>
+          </article>
+
+        </div>
+      </div>
+      <div class="video-scroll-hint">
+        <span data-i18n="vid-hint-drag">← arraste para explorar →</span>
+      </div>
+
+    </section>
+
+    <!-- ==================== ANTES VS DEPOIS (SECTION 5) ==================== -->
+    <section id="antes-depois">
+      <div class="section-header" data-reveal>
+        <span class="section-tag" data-i18n="ba-tag">04 . Resultados</span>
+        <h2 data-i18n="ba-title">A diferença não é estética.<br><span class="highlight">É percepção.</span></h2>
+        <p data-i18n="ba-text">Design não muda só o visual. Muda a forma como as pessoas enxergam e valorizam o seu
+          produto.</p>
+      </div>
+
+      <div class="ba-container" data-reveal>
+        <!-- SVG para conexões dinâmicas -->
+        <svg class="ba-svg-overlay" id="ba-connections">
+          <path id="ba-path-1" class="ba-connection-path" />
+          <path id="ba-path-2" class="ba-connection-path" />
+          <circle id="ba-dot-1a" class="ba-node-dot" r="4" />
+          <circle id="ba-dot-1b" class="ba-node-dot" r="4" />
+          <circle id="ba-dot-2a" class="ba-node-dot" r="4" />
+          <circle id="ba-dot-2b" class="ba-node-dot" r="4" />
+        </svg>
+        <!-- Antes Poster 1 -->
+        <div class="ba-card before" data-magnetic>
+          <div class="ig-header">
+            <div class="ig-avatar">
+              <div class="ig-avatar-inner"></div>
+            </div>
+            <div class="ig-name" data-i18n="ba-before-title">Antes</div>
+          </div>
+          <div class="ba-img-placeholder">
+            <img src="assets/before_after/antes.webp" alt="Antes" loading="lazy" draggable="false">
+          </div>
+          <div class="ig-caption">
+            <p><strong data-i18n="ba-before-title">Antes</strong> <span data-i18n="ba-before-desc">Sua marca pode
+                parecer confusa, amadora e barata.</span></p>
+          </div>
+        </div>
+
+        <!-- Depois Poster 1 -->
+        <div class="ba-card after" data-magnetic>
+          <div class="ig-header">
+            <div class="ig-avatar">
+              <div class="ig-avatar-inner"></div>
+            </div>
+            <div class="ig-name" data-i18n="ba-after-title">Depois</div>
+          </div>
+          <div class="ba-img-placeholder">
+            <img src="assets/before_after/depois.webp" alt="Depois" loading="lazy" draggable="false">
+          </div>
+          <button class="ba-heart-btn" onclick="triggerHeartBurst(this)" aria-label="Curtir">
+            <svg class="ig-icon liked" viewBox="0 0 24 24" fill="#FC4F00" stroke="#FC4F00" stroke-width="2">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+              </path>
+            </svg>
+          </button>
+          <div class="ig-caption">
+            <p><strong data-i18n="ba-after-title">Depois</strong> <span data-i18n="ba-after-desc">Ela se torna clara,
+                profissional e desejável.</span></p>
+          </div>
+        </div>
+
+        <!-- Antes Poster 2 -->
+        <div class="ba-card before" data-magnetic>
+          <div class="ig-header">
+            <div class="ig-avatar">
+              <div class="ig-avatar-inner"></div>
+            </div>
+            <div class="ig-name" data-i18n="ba-before-title">Antes</div>
+          </div>
+          <div class="ba-img-placeholder">
+            <img src="assets/before_after/antes2.webp" alt="Antes 2" loading="lazy" draggable="false">
+          </div>
+          <div class="ig-caption">
+            <p><strong data-i18n="ba-before-title">Antes</strong> <span data-i18n="ba-desc-2">Landing pages que não
+                convertem e perdem dinheiro.</span></p>
+          </div>
+        </div>
+
+        <!-- Depois Poster 2 -->
+        <div class="ba-card after">
+          <div class="ig-header">
+            <div class="ig-avatar">
+              <div class="ig-avatar-inner"></div>
+            </div>
+            <div class="ig-name" data-i18n="ba-after-title">Depois</div>
+          </div>
+          <div class="ba-img-placeholder">
+            <img src="assets/before_after/depois2.webp" alt="Depois 2" loading="lazy" draggable="false">
+          </div>
+          <button class="ba-heart-btn" onclick="triggerHeartBurst(this)" aria-label="Curtir">
+            <svg class="ig-icon liked" viewBox="0 0 24 24" fill="#FC4F00" stroke="#FC4F00" stroke-width="2">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+              </path>
+            </svg>
+          </button>
+          <div class="ig-caption">
+            <p><strong data-i18n="ba-after-title">Depois</strong> <span data-i18n="ba-after-desc-2">Layouts premium que
+                geram autoridade e vendas.</span></p>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+    </section>
+
+    <!-- ==================== CLONES VIRTUAIS (SECTION 6) ==================== -->
+    <section id="clones">
+      <div class="clones-orb"></div>
+      <div class="section-header" data-reveal>
+        <span class="section-tag" data-i18n="cv-tag">05 . Clones Virtuais</span>
+        <h2 data-i18n="cv-title">Transforme sua imagem em uma <span class="highlight">máquina de conteúdo</span></h2>
+        <p data-i18n="cv-sub">Crio versões digitais suas para produzir conteúdo, anúncios e campanhas sem depender da
+          sua presença constante.</p>
+      </div>
+
+      <div class="clones-tags" data-reveal>
+        <div class="glass-point clone-benefit" data-reveal onclick="toggleBenefit(this)">
+          <span class="circle-icon"></span>
+          <span data-i18n="cv-item-1-d">Produza posts, criativos e materiais todos os dias.</span>
+        </div>
+        <div class="glass-point clone-benefit" data-reveal onclick="toggleBenefit(this)">
+          <span class="circle-icon"></span>
+          <span data-i18n="cv-item-2-d">Teste ideias rapidamente sem precisar gravar sempre.</span>
+        </div>
+        <div class="glass-point clone-benefit" data-reveal onclick="toggleBenefit(this)">
+          <span class="circle-icon"></span>
+          <span data-i18n="cv-item-3-d">Sua marca ativa mesmo quando você não está.</span>
+        </div>
+        <div class="glass-point clone-benefit" data-reveal onclick="toggleBenefit(this)">
+          <span class="circle-icon"></span>
+          <span data-i18n="cv-item-4-d">Consistência que fortalece sua imagem.</span>
+        </div>
+      </div>
+
+      <!-- Scroll Horizontal Container -->
+      <div class="clones-carousel-wrapper" data-reveal>
+        <div class="clones-carousel" id="clonesCarousel">
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_22yearold_hispanic_man_with_short_dark_hai_4622.webp"
+              alt="Clone da IA 1" draggable="false"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_22yearold_hispanic_man_with_short_dark_hai_4627.webp"
+              alt="Clone da IA 2" draggable="false"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_22yearold_man_with_brown_skin_dark_curly_h_4625.webp"
+              alt="Clone da IA 3" draggable="false"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_hair_and_a_beard_4628.webp"
+              alt="Clone da IA 4" draggable="false"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_hair_and_a_beard_4629.webp"
+              alt="Clone da IA 5" draggable="false"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_hair_brown_eyes_a_4623.webp"
+              alt="Clone da IA 6" draggable="false"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_skin_curly_brown_4626.webp"
+              alt="Clone da IA 7" draggable="false"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_skin_dark_curly_h_4624.webp"
+              alt="Clone da IA 8" draggable="false"></div>
+          <!-- Duplicação completa para loop infinito -->
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_22yearold_hispanic_man_with_short_dark_hai_4622.webp"
+              alt="Clone da IA 1"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_22yearold_hispanic_man_with_short_dark_hai_4627.webp"
+              alt="Clone da IA 2"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_22yearold_man_with_brown_skin_dark_curly_h_4625.webp"
+              alt="Clone da IA 3"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_hair_and_a_beard_4628.webp"
+              alt="Clone da IA 4"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_hair_and_a_beard_4629.webp"
+              alt="Clone da IA 5"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_hair_brown_eyes_a_4623.webp"
+              alt="Clone da IA 6"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_skin_curly_brown_4626.webp"
+              alt="Clone da IA 7"></div>
+          <div class="clone-carousel-item"><img
+              src="assets/clones/freepik_photo_a_25yearold_man_with_brown_skin_dark_curly_h_4624.webp"
+              alt="Clone da IA 8"></div>
+        </div>
+      </div>
+
+      <div class="clones-action" data-reveal>
+        <a href="https://wa.me/5563992770792" target="_blank" class="btn-cta-glass" data-magnetic>
+          <span class="btn-cta-inner">
+            <span data-i18n="cv-cta">Quero escalar minha imagem</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== PARCERIA (SECTION 7) ==================== -->
+    <section id="parceria">
+      <div class="section-header" data-reveal>
+        <span class="section-tag" data-i18n="work-tag">06 . Parceria</span>
+        <h2 data-i18n="work-title">Com quem eu <span class="highlight blink-glow">trabalho</span></h2>
+      </div>
+
+      <div class="work-lists" data-reveal>
+        <div class="work-col">
+          <h3 data-i18n="work-is-title" class="work-title is-orange">É pra quem:</h3>
+          <div class="work-points-grid">
+            <div class="glass-point">
+              <span class="work-icon">✓</span>
+              <span data-i18n="work-is-1">Quer vender mais através da imagem</span>
+            </div>
+            <div class="glass-point">
+              <span class="work-icon">✓</span>
+              <span data-i18n="work-is-2">Quer parecer profissional e confiável</span>
+            </div>
+            <div class="glass-point">
+              <span class="work-icon">✓</span>
+              <span data-i18n="work-is-3">Entende que design influencia diretamente nas vendas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-col not-work">
+          <h3 data-i18n="work-not-title" class="work-title is-orange">Não é pra quem:</h3>
+          <div class="work-points-grid">
+            <div class="glass-point not">
+              <span class="work-icon">✕</span>
+              <span data-i18n="work-not-1">Quer apenas “arte bonita”</span>
+            </div>
+            <div class="glass-point not">
+              <span class="work-icon">✕</span>
+              <span data-i18n="work-not-2">Busca o mais barato</span>
+            </div>
+            <div class="glass-point not">
+              <span class="work-icon">✕</span>
+              <span data-i18n="work-not-3">Não valoriza estratégia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROVA SOCIAL (SECTION 8) ==================== -->
+    <section id="prova-social">
+      <div class="feedback-orb"></div>
+      <div class="section-header" data-reveal>
+        <span class="section-tag" data-i18n="proof-tag">07 . Feedback</span>
+        <h2 data-i18n="proof-title">Quem já trabalhou comigo <span class="highlight">sente a diferença</span></h2>
+        <p data-i18n="proof-sub">Mais do que estética, meus clientes percebem mudança na forma como são vistos,
+          valorizados e escolhidos.</p>
+      </div>
+
+      <div class="proof-content" data-reveal>
+        <div class="proof-carousel-wrapper" id="proofCarouselWrapper">
+          <div class="proof-carousel" id="proofCarousel">
+            <!-- Item 1 -->
+            <div class="tweet-card">
+              <div class="tweet-header">
+                <img src="assets/images/avatar_maria.webp" alt="Maria Clara" class="tweet-avatar" draggable="false">
+                <div class="tweet-user">
+                  <span class="tweet-name" data-i18n="proof-name-1">Maria Clara ✨</span>
+                  <span class="tweet-handle">@mariac_mkt</span>
+                </div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-1">O Lucaszé não entrega só design, ele entrega um
+                posicionamento. Meus leads mudaram de nível depois que refizemos a identidade visual. Agora as pessoas
+                me respeitam antes mesmo de eu abrir a boca. 🚀🔥</p>
+              <div class="tweet-footer"><span>9:41 AM · Mar 19, 2024</span></div>
+            </div>
+            <!-- Item 2 -->
+            <div class="tweet-card">
+              <div class="tweet-header">
+                <img src="assets/images/avatar_joao.webp" alt="Joao Pedro" class="tweet-avatar" draggable="false">
+                <div class="tweet-user">
+                  <span class="tweet-name" data-i18n="proof-name-2">Joao Pedro</span>
+                  <span class="tweet-handle">@jp_digital</span>
+                </div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-2">O carrossel de clones virtuais que ele montou pra mim está
+                convertendo 3x mais que meus anúncios antigos. Bizarro o resultado. Praticamente multipliquei minha
+                presença sem precisar gravar nada novo. 🤯🧡</p>
+              <div class="tweet-footer"><span>2:15 PM · Mar 18, 2024</span></div>
+            </div>
+            <!-- Item 3 -->
+            <div class="tweet-card">
+              <div class="tweet-header">
+                <img src="assets/images/avatar_ana.webp" alt="Ana Beatriz" class="tweet-avatar" draggable="false">
+                <div class="tweet-user">
+                  <span class="tweet-name" data-i18n="proof-name-3">Ana Beatriz</span>
+                  <span class="tweet-handle">@anab_estrategia</span>
+                </div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-3">Design que vende de verdade. Antes eu era só mais uma no
+                mar de amadores, agora as pessoas param para me ouvir. O investimento se pagou na primeira semana
+                fechando novos contratos. 📈✨</p>
+              <div class="tweet-footer"><span>11:20 AM · Mar 17, 2024</span></div>
+            </div>
+            <!-- Item 4 -->
+            <div class="tweet-card">
+              <div class="tweet-header">
+                <img src="assets/images/avatar_ricardo.webp" alt="Ricardo Vendas" class="tweet-avatar"
+                  draggable="false">
+                <div class="tweet-user">
+                  <span class="tweet-name" data-i18n="proof-name-4">Ricardo Vendas</span>
+                  <span class="tweet-handle">@ricardo_vendas</span>
+                </div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-4">Trabalho insano. A landing page que ele fez no mês passado
+                parou de ser só uma página bonita e começou a converter prospect de ticket alto direto no Whats.
+                Estratégia pura! 🤝🔥</p>
+              <div class="tweet-footer"><span>4:50 PM · Mar 16, 2024</span></div>
+            </div>
+            <!-- Item 5 -->
+            <div class="tweet-card">
+              <div class="tweet-header">
+                <img src="assets/images/avatar_fernanda.webp" alt="Fernanda Estilo" class="tweet-avatar"
+                  draggable="false">
+                <div class="tweet-user">
+                  <span class="tweet-name" data-i18n="proof-name-5">Fernanda Estilo</span>
+                  <span class="tweet-handle">@fe_estilo</span>
+                </div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-5">A identidade que o Lucas montou no ano passado ainda recebe
+                elogios toda semana. Meus clientes sentem que a marca é muito mais cara do que eu cobro. O melhor
+                investimento que fiz. 🏛️✨</p>
+              <div class="tweet-footer"><span>10:05 AM · Mar 15, 2024</span></div>
+            </div>
+            <!-- Item 6 -->
+            <div class="tweet-card">
+              <div class="tweet-header">
+                <img src="assets/images/avatar_matheus.webp" alt="Matheus Ads" class="tweet-avatar" draggable="false">
+                <div class="tweet-user">
+                  <span class="tweet-name" data-i18n="proof-name-6">Matheus Ads</span>
+                  <span class="tweet-handle">@math_ads</span>
+                </div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-6">Os criativos pro lançamento bateram recorde de CTR. O Lucas
+                tem um olhar de marketing que faltava em outros designers que contratei. Ele entende de venda, não só de
+                pixel. 📈⚡</p>
+              <div class="tweet-footer"><span>8:30 PM · Mar 14, 2024</span></div>
+            </div>
+            <!-- Duplicação para loop infinito -->
+            <div class="tweet-card">
+              <div class="tweet-header"><img src="assets/images/avatar_maria.webp" alt="Maria Clara"
+                  class="tweet-avatar">
+                <div class="tweet-user"><span class="tweet-name" data-i18n="proof-name-1">Maria Clara ✨</span><span
+                    class="tweet-handle">@mariac_mkt</span></div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-1">O Lucaszé não entrega só design, ele entrega um
+                posicionamento. Meus leads mudaram de nível depois que refizemos a identidade visual.</p>
+              <div class="tweet-footer"><span>9:41 AM · Mar 19, 2024</span></div>
+            </div>
+            <div class="tweet-card">
+              <div class="tweet-header"><img src="assets/images/avatar_joao.webp" alt="Joao Pedro" class="tweet-avatar">
+                <div class="tweet-user"><span class="tweet-name" data-i18n="proof-name-2">Joao Pedro</span><span
+                    class="tweet-handle">@jp_digital</span></div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-2">O carrossel de clones virtuais que ele montou pra mim está
+                convertendo 3x mais que meus anúncios antigos. Bizarro o resultado.</p>
+              <div class="tweet-footer"><span>2:15 PM · Mar 18, 2024</span></div>
+            </div>
+            <div class="tweet-card">
+              <div class="tweet-header"><img src="assets/images/avatar_ana.webp" alt="Ana Beatriz" class="tweet-avatar">
+                <div class="tweet-user"><span class="tweet-name" data-i18n="proof-name-3">Ana Beatriz</span><span
+                    class="tweet-handle">@anab_estrategia</span></div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-3">Design que vende de verdade. Antes eu era só mais uma no
+                mar de amadores, agora as pessoas param para me ouvir.</p>
+              <div class="tweet-footer"><span>11:20 AM · Mar 17, 2024</span></div>
+            </div>
+            <div class="tweet-card">
+              <div class="tweet-header"><img src="assets/images/avatar_ricardo.webp" alt="Ricardo Vendas"
+                  class="tweet-avatar">
+                <div class="tweet-user"><span class="tweet-name" data-i18n="proof-name-4">Ricardo Vendas</span><span
+                    class="tweet-handle">@ricardo_vendas</span></div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-4">Trabalho insano. A landing page que ele fez no mês passado
+                parou de ser só uma página bonita e começou a converter.</p>
+              <div class="tweet-footer"><span>4:50 PM · Mar 16, 2024</span></div>
+            </div>
+            <div class="tweet-card">
+              <div class="tweet-header"><img src="assets/images/avatar_fernanda.webp" alt="Fernanda Estilo"
+                  class="tweet-avatar">
+                <div class="tweet-user"><span class="tweet-name" data-i18n="proof-name-5">Fernanda Estilo</span><span
+                    class="tweet-handle">@fe_estilo</span></div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-5">A identidade que o Lucas montou no ano passado ainda recebe
+                elogios toda semana. Meus clientes sentem que a marca é muito mais cara.</p>
+              <div class="tweet-footer"><span>10:05 AM · Mar 15, 2024</span></div>
+            </div>
+            <div class="tweet-card">
+              <div class="tweet-header"><img src="assets/images/avatar_matheus.webp" alt="Matheus Ads"
+                  class="tweet-avatar">
+                <div class="tweet-user"><span class="tweet-name" data-i18n="proof-name-6">Matheus Ads</span><span
+                    class="tweet-handle">@math_ads</span></div>
+              </div>
+              <p class="tweet-text" data-i18n="proof-text-6">Os criativos pro lançamento bateram recorde de CTR. O Lucas
+                tem um olhar de marketing que faltava em outros designers.</p>
+              <div class="tweet-footer"><span>8:30 PM · Mar 14, 2024</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ (SECTION 9) ==================== -->
+    <section id="faq">
+      <div class="section-header" data-reveal>
+        <span class="section-tag" data-i18n="faq-tag">08 . FAQ</span>
+        <h2 data-i18n="faq-title">Dúvidas <span class="highlight">Frequentes</span></h2>
+      </div>
+
+      <div class="faq-container" data-reveal>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq-q1">Quanto custa um projeto?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq-a1">O valor varia de acordo com o objetivo e complexidade. Não trabalho com design barato,
+              trabalho com resultado.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq-q2">Você faz só design ou estratégia também?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq-a2">Todo projeto é pensado com estratégia. O design é a execução final.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq-q3">Quanto tempo leva?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq-a3">Depende do projeto, mas sempre priorizo qualidade e impacto real.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq-q4">Preciso aparecer?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq-a4">Não necessariamente. Posso usar clones virtuais ou outras estratégias.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq-q5">Você trabalha com qualquer cliente?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq-a5">Não. Trabalho com quem está comprometido em crescer e evoluir a marca.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SOBRE ==================== -->
+    <section id="sobre">
+      <div class="about-wrapper">
+        <div class="about-photo-col" data-reveal="left">
+          <div class="about-photo-frame">
+            <img src="assets/branding/lucas_foto_1_essa_foto_vai_na_parte_sobre_mim_.webp"
+              alt="Foto de Perfil - Lucaszé Design - Estrategista Visual e Branding" loading="lazy" />
+          </div>
+          <div class="about-badge">
+            <span class="badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </span>
+            <div>
+              <strong data-i18n="about-badge-1">Desde 2019</strong>
+              <small data-i18n="about-badge-2">No mercado, com clientes reais</small>
+            </div>
+          </div>
+        </div>
+        <div class="about-text-col" data-reveal="right">
+          <span class="section-tag" data-i18n="p-tag-5">09 . Sobre Mim</span>
+          <h2 data-i18n="p-title-5">Não sou só designer.<br><span class="highlight">Sou estrategista visual.</span></h2>
+          <p class="about-lead" data-i18n="about-lead">Desde 2019 atuo com design, comunicação e marketing digital. Não
+            comecei em sala de aula, comecei no mercado, com clientes reais, prazos reais e a pressão de gerar resultado
+            de verdade.</p>
+
+          <p class="about-extra" data-i18n="about-extra">Não trabalho com achismo. Cada decisão visual tem um objetivo:
+            aumentar percepção de valor e facilitar a venda.</p>
+
+          <div class="about-manifesto" data-reveal>
+            <p data-i18n="about-manifesto-text">União de criatividade, estratégia e tecnologia, materiais que não só
+              parecem bons, mas que realmente convertem.</p>
+          </div>
+
+          <p data-i18n="about-p3">Hoje trabalho com foco em percepção de marca, posicionamento e conversão. Meu processo
+            é pensado para que cada entrega impacte direto na forma como o seu cliente te enxerga, e nas suas vendas.
+          </p>
+          <div class="about-services">
+            <div class="service-tag" data-i18n="about-tag-1">Identidade Visual</div>
+            <div class="service-tag" data-i18n="about-tag-2">Social Media</div>
+            <div class="service-tag" data-i18n="about-tag-3">Campanha</div>
+            <div class="service-tag" data-i18n="about-tag-4">Carrosséis</div>
+            <div class="service-tag" data-i18n="about-tag-5">Reels e Vídeo</div>
+            <div class="service-tag" data-i18n="about-tag-6">Posicionamento</div>
+            <div class="service-tag" data-i18n="about-tag-7">Marketing Digital</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTATO ==================== -->
+    <section id="contato">
+      <div class="contact-orb"></div>
+      <div class="contact-inner" data-reveal>
+        <span class="section-tag" data-i18n="p-tag-6">10 . Contato</span>
+        <h2 class="contact-title" data-i18n="p-title-6">Sua marca parece o valor<br><span class="highlight">que você
+            quer cobrar?</span></h2>
+        <p class="contact-sub"><span data-i18n="contact-sub">Se não parece, o problema não é o seu produto. É a forma
+            como ele está sendo percebido.</span></p>
+
+        <div class="contact-message" data-i18n="contact-message">
+          Seu produto pode ser bom, mas se não convence, ninguém compra.<br><br>
+          Trabalho com poucos projetos por vez para garantir qualidade e resultado em cada entrega.
+        </div>
+
+        <div class="contact-actions">
+          <a href="https://wa.me/5563992770792" target="_blank" class="btn-cta-glass primary" data-magnetic>
+            <span class="btn-cta-inner">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.104 1.524 5.826L0 24l6.337-1.508A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.001-1.368l-.361-.214-3.741.981.998-3.648-.235-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
+              </svg>
+              <span data-i18n="contact-cta">Me chama no WhatsApp</span>
+            </span>
+          </a>
+          <a href="https://www.instagram.com/lucaszedesign?igsh=MW50enEwaWc0cmZybg%3D%3D&utm_source=qr" target="_blank"
+            class="btn-ghost secondary" data-i18n="contact-ig" data-magnetic>
+            Ver Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-highlight-box" data-reveal>
+        <p data-i18n="contact-highlight">Percepção não é detalhe. É o que define se você vende ou não.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="mainFooter">
+    <div class="footer-inner">
+      <img src="assets/branding/logo_lucasze_com_ze_laranja.webp" alt="Lucaszé Design" class="footer-logo" />
+      <p data-i18n="footer-p">© 2025 Lucaszé Design . Estratégia, Percepção e Resultados Digitais.<br>Araguaína - TO</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/lucaszedesign?igsh=MW50enEwaWc0cmZybg%3D%3D&utm_source=qr" target="_blank"
+          rel="noopener" data-i18n="footer-ig">Instagram</a>
+        <a href="https://wa.me/5563992770792" target="_blank" rel="noopener" data-i18n="footer-wa"
+          data-magnetic>WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL ==================== -->
+  <div id="projectModal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close"
+        onclick="document.getElementById('projectModal').classList.remove('active'); document.body.style.overflow=''">✕</button>
+      <div class="modal-slides-wrapper" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js?v=2.0"></script>
+  <!-- Reset Scroll on Refresh -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+</body>
+
+</html>

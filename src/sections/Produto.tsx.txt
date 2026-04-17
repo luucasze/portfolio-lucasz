@@ -1,0 +1,31 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import { produto } from "@/content/produto";
+
+export default function Produto() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+        <div className="max-w-3xl flex flex-col gap-6">
+
+          <span className="text-yellow-400 text-sm">
+            {produto.label}
+          </span>
+
+          <h2 className="text-5xl font-bold">
+            {produto.name}
+          </h2>
+
+          {produto.description.map((t, i) => (
+            <p key={i}>{t}</p>
+          ))}
+
+          {produto.highlight.map((t, i) => (
+            <p key={i} className="font-semibold">{t}</p>
+          ))}
+
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+}

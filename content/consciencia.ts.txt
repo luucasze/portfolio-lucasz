@@ -1,0 +1,14 @@
+export const consciencia = {
+  title: "O verdadeiro problema",
+
+  text: [
+    "Você é bom no que faz.",
+    "O problema é como você aparece.",
+    "Clientes não pagam pelo seu talento. Eles pagam pela confiança que você transmite.",
+    "Um freelancer sem contrato parece amador.",
+    "Um freelancer sem precificação aceita qualquer valor.",
+    "Um freelancer sem briefing perde horas em retrabalho.",
+  ],
+
+  conclusion: "Não é falta de habilidade. É falta de postura profissional.",
+};

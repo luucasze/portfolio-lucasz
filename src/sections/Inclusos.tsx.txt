@@ -1,0 +1,26 @@
+import Container from "@/components/Container";
+import SectionWrapper from "@/components/SectionWrapper";
+import { inclusos } from "@/content/inclusos";
+
+export default function Inclusos() {
+  return (
+    <SectionWrapper className="bg-black text-white">
+      <Container>
+
+        <h2 className="text-4xl font-bold mb-6">
+          {inclusos.title}
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {inclusos.items.map((item, i) => (
+            <div key={i} className="border p-4 rounded-xl">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+      </Container>
+    </SectionWrapper>
+  );
+}

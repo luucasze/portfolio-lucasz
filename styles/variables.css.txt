@@ -1,0 +1,14 @@
+:root {
+  --color-bg: #0b0b0b;
+
+  --color-primary: #fc4f00; /* Laranja */
+  --color-white: #ffffff;
+  --color-gray: #e6e6e6;
+  --color-muted: #a1a1aa;
+
+  --color-border: #1f1f1f;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}

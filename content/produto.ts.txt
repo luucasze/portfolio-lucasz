@@ -1,0 +1,14 @@
+export const produto = {
+  label: "A solução",
+
+  name: "Kit Defesa",
+
+  description: [
+    "Um sistema completo para você parar de ser desvalorizado, se proteger de calotes e cobrar o que o seu trabalho realmente vale.",
+  ],
+
+  highlight: [
+    "Não é uma pasta de arquivos.",
+    "É a estrutura que você precisava desde o início.",
+  ],
+};
