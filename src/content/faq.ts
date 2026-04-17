@@ -7,7 +7,7 @@ export const faqItems = [
     {
         id: 2,
         question: "Como vou receber o Kit Defesa?",
-        answer: "Após a confirmação do pagamento pela Kiwify, você recebe acesso imediato por e-mail. Todos os arquivos (calculadora, contrato, planilha, recibo, proposta e briefing) ficam disponíveis para download direto. Não existe espera: aprovou, já tem acesso.",
+        answer: "Após a confirmação do pagamento pela Hotmart, você recebe acesso imediato por e-mail. Todos os arquivos (calculadora, contrato, planilha, recibo, proposta e briefing) ficam disponíveis para download direto. Não existe espera: aprovou, já tem acesso.",
     },
     {
         id: 3,
